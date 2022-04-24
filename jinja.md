@@ -12,7 +12,7 @@ The syntax is somewhat similar to ERB except for {} instead of <> quotes
 
 
 ## Loops
-```
+```jinja
 {% raw %}
      {% for i in list %} ... {% endfor %}
 {% endraw %}
@@ -20,7 +20,7 @@ The syntax is somewhat similar to ERB except for {} instead of <> quotes
 
 ## Functions
 Defining functions
-```
+```jinja
 {% raw %}
      {% macro myfunct(param1, param2) %}
      ...
@@ -29,7 +29,7 @@ Defining functions
 ```
 
 Using functions
-```
+```jinja
 {% raw %}
      {% myfunc(var, 5) %}
 {% endraw %}
