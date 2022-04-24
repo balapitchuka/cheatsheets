@@ -17,35 +17,40 @@ RUN apt-get update \
 ```
 
 Copy files
-
-    COPY sourcefile.txt /app
-    COPY sourcefile.txt config.ini /app/           # Note the trailing slash on target with multiple files 
-    COPY dir1 /app
+```dockerfile
+COPY sourcefile.txt /app
+COPY sourcefile.txt config.ini /app/           # Note the trailing slash on target with multiple files 
+COPY dir1 /app
+```
 
 Adding users
-
-    RUN useradd jsmith -u 1001 -s /bin/bash
+```dockerfile
+RUN useradd jsmith -u 1001 -s /bin/bash
+```
 
 Defining work directories and environment
-
-    WORKDIR /home/jsmith/
-    ENV HOME /home/jsmith
+```dockerfile
+WORKDIR /home/jsmith/
+ENV HOME /home/jsmith
+```
 
 Mounts
-
-    VOLUME ["/home"]
+```dockerfile
+VOLUME ["/home"]
+```
 
 Opening ports
-
-    EXPOSE 22
-    EXPOSE 80
+```dockerfile
+EXPOSE 22
+EXPOSE 80
+```
 
 Start command
-
-    USER jsmith
-    WORKDIR /home/jsmith/
-    ENTRYPOINT bin/my-start-script.sh
-
+```dockerfile
+USER jsmith
+WORKDIR /home/jsmith/
+ENTRYPOINT bin/my-start-script.sh
+```
 Start command with parameters
 
     ENTRYPOINT [ "script.sh", "param1", "param2"]            # using ENTRYPOINT command cannot be overridden, only parameters can be appended
