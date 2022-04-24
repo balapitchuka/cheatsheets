@@ -1,7 +1,7 @@
 ## Dockerfile Examples
 
 Installing packages
-```docker
+```dockerfile
 FROM debian:jessie
 
 ENV DEBIAN_FRONTEND=noninteractive             # Always have this on Debian-based distros!
